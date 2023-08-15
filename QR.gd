@@ -218,7 +218,7 @@ func draw_data(data, coords, time):
 func draw_info(data, pos):
 	for i in range(pos, pos+len(data)):
 		for cell in info_coords[i]:
-			print(i, ' - ', cell.x, ' - ', cell.y)
+#			print(i, ' - ', cell.x, ' - ', cell.y)
 			$TileMap.set_cell(cell.x, cell.y, data[i-pos])
 		yield(get_tree().create_timer(0.1), "timeout")
 		

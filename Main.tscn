@@ -165,11 +165,13 @@ size_flags_horizontal = 3
 margin_top = 10.0
 margin_right = 301.0
 margin_bottom = 578.0
+focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Start creating your QR code!
 Add patterns that will help orient your code in the process of reading
 "
+selection_enabled = true
 
 [connection signal="pressed" from="Control/VBoxContainer/DrawPatterns" to="." method="_on_Draw_Patterns_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/DrawTimingPatterns" to="." method="_on_DrawTimingPatterns_pressed"]

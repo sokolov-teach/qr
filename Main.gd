@@ -3,6 +3,12 @@ extends Node2D
 var coords
 var format_info = []
 
+# for debugging in HTML5
+func print5(input):
+	var output = str(input)
+	var text = $Control/VBoxContainer2/RichTextLabel.text + '\n' + output
+	$Control/VBoxContainer2/RichTextLabel.text = text
+
 # Converts decimal number to n-bit binary array
 func dec2bin(dec, n):
 	var bin = []
@@ -27,16 +33,16 @@ func ascii2bin(text):
 	var byte_array = text.to_wchar()
 	
 	var data = []
-	for i in range(0, len(byte_array), 2):
-		data.append_array(dec2bin(byte_array[i], 8))
-	
+	for i in byte_array:
+		if i != 0:
+			data.append_array(dec2bin(i, 8))
 	return(data)
 
 func _process(_delta):
 	pass
 
 func _ready():
-	print(bin2dec(ascii2bin('D')))
+#	var t = ascii2bin('DA')
 	get_viewport().connect("gui_focus_changed", self, "_on_focus_changed")
 	
 #	# Encoding Mode
@@ -140,7 +146,7 @@ func _on_DrawECBlocks_pressed():
 			data.append(coords[i].z)
 	for i in range(len(data)):
 		if i % 8 == 0:
-			print(data.slice(i, i+7))
+#			print(data.slice(i, i+7))
 			msg_in.append(bin2dec(data.slice(i, i+7)))
 	
 	var EC_codewords = $QR.rs_encode_msg(msg_in, 26 - max_length - 2)
