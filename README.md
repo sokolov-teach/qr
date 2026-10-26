@@ -16,3 +16,6 @@
 - [**"QR Code Tutorial"**](https://www.thonky.com/qr-code-tutorial/introduction) by Thonky
 - [**"Reed-Solomon Error Correcting Codes from the Bottom Up"**](https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html) by tomverbeure
 
+## AI disclosure
+LLM only wrote draft of this README. 
+All code written by yours truly (i think some algorithms were taken from Wikipedia and rewritten to gdscript)
